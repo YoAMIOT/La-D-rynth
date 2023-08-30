@@ -114,7 +114,7 @@ public class CharacterCustomization : Spatial{
         GetNode<Control>("Confirm/ConfirmMenu").Visible = true;
     }
 
-    private void confirmPressed(){
+    private async void confirmPressed(){
         GetNode<Control>("Confirm/ConfirmMenu").Visible = false;
         GetNode<Control>("Confirm/Checks").Visible = true;
         string hairStyle = GetNode<OptionButton>("UI/VBoxContainer/HairOption").GetItemText(GetNode<OptionButton>("UI/VBoxContainer/HairOption").GetSelectedId());
@@ -131,6 +131,10 @@ public class CharacterCustomization : Spatial{
             {"skinColor", skinColor.ToHtml()}
         };
         DataManager.savePlayerDatas();
+
+        await ToSignal(GetTree().CreateTimer(1.5f), "timeout");
+
+        GetTree().ChangeScene("res://scenes/3D/TestWorld.tscn");
     }
 
     private void cancelConfirmationPressed(){
