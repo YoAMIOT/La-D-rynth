@@ -16,7 +16,6 @@ public class Char : KinematicBody{
     private int speed = MAX_SPEED;
     private Vector3 _velocity = Vector3.Zero;
     private Godot.Collections.Dictionary characterAttribute;
-    private Server Server;
     public string target = "";
     private string[] Spells = {"Heal", "Repulse", "Dmg1"};
     private string selectedSpell = "";
@@ -25,7 +24,6 @@ public class Char : KinematicBody{
     private int manaRubyCount = 0;
 
     public override void _Ready(){
-        Server = GetNode<Server>("/root/Server");
         initializePhysicalAttributes();
         GetNode<Timer>("SpellCooldown").Connect("timeout", this, "castCooldown");
         Input.SetMouseMode(Input.MouseMode.Captured);

@@ -10,13 +10,13 @@ config_version=4
 
 [application]
 
-config/name="My Mail Village Rethinked"
-run/main_scene="res://scenes/UI/Authentication.tscn"
+config/name="La-D-rynth"
+run/main_scene="res://scenes/3D/CharacterCustomization.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Server="*res://scripts/singletons/Server.cs"
+DataManager="*res://scripts/singletons/DataManager.cs"
 
 [display]
 

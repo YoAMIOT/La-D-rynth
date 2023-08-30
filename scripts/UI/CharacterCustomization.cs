@@ -4,8 +4,10 @@ using System;
 public class CharacterCustomization : Spatial{
     private Material skinColor;
     private Material hairColor;
+    private DataManager DataManager;
 
     public override void _Ready(){
+        DataManager = GetNode<DataManager>("/root/DataManager");
         Godot.Collections.Array eyes = getFilesInDirectory("res://ressources/meshes/attributes/", nameof(eyes));
         Godot.Collections.Array noses = getFilesInDirectory("res://ressources/meshes/attributes/", nameof(noses));
         Godot.Collections.Array hair = getFilesInDirectory("res://ressources/meshes/attributes/", nameof(hair));
@@ -120,8 +122,15 @@ public class CharacterCustomization : Spatial{
         string noseType = GetNode<OptionButton>("UI/VBoxContainer/NosesOption").GetItemText(GetNode<OptionButton>("UI/VBoxContainer/NosesOption").GetSelectedId());
         Color hairColor = GetNode<ColorPickerButton>("UI/VBoxContainer/HairColor").Color;
         Color skinColor = GetNode<ColorPickerButton>("UI/VBoxContainer/SkinColor").Color;
-        Server Server = GetNode<Server>("/root/Server");
-        Server.SendCharacterDatas(hairStyle, eyesType, noseType, hairColor, skinColor);
+
+        DataManager.playerDatas["characterAttributes"] = new Godot.Collections.Dictionary{
+            {"hairStyle" , hairStyle},
+            {"hairColor", hairColor.ToHtml()},
+            {"eyesType", eyesType},
+            {"noseType", noseType},
+            {"skinColor", skinColor.ToHtml()}
+        };
+        DataManager.savePlayerDatas();
     }
 
     private void cancelConfirmationPressed(){
