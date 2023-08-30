@@ -1,0 +1,1089 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://ressources/font/TiwipiFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ressources/font/TiwipiFontSmall.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/UI/AddressSelector.cs" type="Script" id=3]
+[ext_resource path="res://ressources/animations/loading/loading2.png" type="Texture" id=4]
+[ext_resource path="res://ressources/animations/loading/loading3.png" type="Texture" id=5]
+[ext_resource path="res://ressources/animations/loading/loading4.png" type="Texture" id=6]
+[ext_resource path="res://ressources/animations/loading/loading1.png" type="Texture" id=7]
+[ext_resource path="res://ressources/animations/loading/loading5.png" type="Texture" id=8]
+[ext_resource path="res://ressources/animations/loading/loading7.png" type="Texture" id=9]
+[ext_resource path="res://ressources/animations/loading/loading6.png" type="Texture" id=10]
+[ext_resource path="res://ressources/animations/loading/loading8.png" type="Texture" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[node name="AddressSelector" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 0.175
+anchor_bottom = 0.296
+margin_right = -3.05176e-05
+margin_bottom = 0.320007
+custom_fonts/font = ExtResource( 1 )
+text = "-First choose a letter..
+-Then choose a box you like, pure magic test! ABSOLUTLY nothing to do with some timey-wimey thingy..."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LetterList" type="ItemList" parent="."]
+anchor_top = 0.296
+anchor_right = 0.175
+anchor_bottom = 0.652
+margin_top = 0.320007
+margin_right = -168.0
+margin_bottom = -192.16
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 2 )
+items = [ "A", null, false, "B", null, false, "C", null, false, "D", null, false, "E", null, false, "F", null, false, "G", null, false, "H", null, false, "I", null, false, "J", null, false, "K", null, false, "L", null, false, "M", null, false, "N", null, false, "O", null, false, "P", null, false, "Q", null, false, "R", null, false, "S", null, false, "T", null, false, "U", null, false, "V", null, false, "W", null, false, "X", null, false, "Y", null, false, "", null, true, "", null, true, "Z", null, false ]
+max_columns = 5
+same_column_width = true
+fixed_column_width = 25
+icon_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coords" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="0,0" type="Button" parent="Coords"]
+anchor_left = 0.4
+anchor_top = 0.174074
+anchor_right = 0.433333
+anchor_bottom = 0.233333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1,0" type="Button" parent="Coords"]
+anchor_left = 0.4375
+anchor_top = 0.174074
+anchor_right = 0.470833
+anchor_bottom = 0.233333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2,0" type="Button" parent="Coords"]
+anchor_left = 0.475
+anchor_top = 0.174074
+anchor_right = 0.508333
+anchor_bottom = 0.233333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3,0" type="Button" parent="Coords"]
+anchor_left = 0.5125
+anchor_top = 0.174074
+anchor_right = 0.545833
+anchor_bottom = 0.233333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4,0" type="Button" parent="Coords"]
+anchor_left = 0.55
+anchor_top = 0.174074
+anchor_right = 0.583333
+anchor_bottom = 0.233333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5,0" type="Button" parent="Coords"]
+anchor_left = 0.5875
+anchor_top = 0.174074
+anchor_right = 0.620833
+anchor_bottom = 0.233333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="6,0" type="Button" parent="Coords"]
+anchor_left = 0.625
+anchor_top = 0.174074
+anchor_right = 0.658333
+anchor_bottom = 0.233333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="7,0" type="Button" parent="Coords"]
+anchor_left = 0.6625
+anchor_top = 0.174074
+anchor_right = 0.695833
+anchor_bottom = 0.233333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="8,0" type="Button" parent="Coords"]
+anchor_left = 0.7
+anchor_top = 0.174074
+anchor_right = 0.733333
+anchor_bottom = 0.233333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="9,0" type="Button" parent="Coords"]
+anchor_left = 0.7375
+anchor_top = 0.174074
+anchor_right = 0.770833
+anchor_bottom = 0.233333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="0,1" type="Button" parent="Coords"]
+anchor_left = 0.4
+anchor_top = 0.240741
+anchor_right = 0.433333
+anchor_bottom = 0.3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1,1" type="Button" parent="Coords"]
+anchor_left = 0.4375
+anchor_top = 0.240741
+anchor_right = 0.470833
+anchor_bottom = 0.3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2,1" type="Button" parent="Coords"]
+anchor_left = 0.475
+anchor_top = 0.240741
+anchor_right = 0.508333
+anchor_bottom = 0.3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3,1" type="Button" parent="Coords"]
+anchor_left = 0.5125
+anchor_top = 0.240741
+anchor_right = 0.545833
+anchor_bottom = 0.3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4,1" type="Button" parent="Coords"]
+anchor_left = 0.55
+anchor_top = 0.240741
+anchor_right = 0.583333
+anchor_bottom = 0.3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5,1" type="Button" parent="Coords"]
+anchor_left = 0.5875
+anchor_top = 0.240741
+anchor_right = 0.620833
+anchor_bottom = 0.3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="6,1" type="Button" parent="Coords"]
+anchor_left = 0.625
+anchor_top = 0.240741
+anchor_right = 0.658333
+anchor_bottom = 0.3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="7,1" type="Button" parent="Coords"]
+anchor_left = 0.6625
+anchor_top = 0.240741
+anchor_right = 0.695833
+anchor_bottom = 0.3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="8,1" type="Button" parent="Coords"]
+anchor_left = 0.7
+anchor_top = 0.240741
+anchor_right = 0.733333
+anchor_bottom = 0.3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="9,1" type="Button" parent="Coords"]
+anchor_left = 0.7375
+anchor_top = 0.240741
+anchor_right = 0.770833
+anchor_bottom = 0.3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="0,2" type="Button" parent="Coords"]
+anchor_left = 0.4
+anchor_top = 0.307407
+anchor_right = 0.433333
+anchor_bottom = 0.366667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1,2" type="Button" parent="Coords"]
+anchor_left = 0.4375
+anchor_top = 0.307407
+anchor_right = 0.470833
+anchor_bottom = 0.366667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2,2" type="Button" parent="Coords"]
+anchor_left = 0.475
+anchor_top = 0.307407
+anchor_right = 0.508333
+anchor_bottom = 0.366667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3,2" type="Button" parent="Coords"]
+anchor_left = 0.5125
+anchor_top = 0.307407
+anchor_right = 0.545833
+anchor_bottom = 0.366667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4,2" type="Button" parent="Coords"]
+anchor_left = 0.55
+anchor_top = 0.307407
+anchor_right = 0.583333
+anchor_bottom = 0.366667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5,2" type="Button" parent="Coords"]
+anchor_left = 0.5875
+anchor_top = 0.307407
+anchor_right = 0.620833
+anchor_bottom = 0.366667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="6,2" type="Button" parent="Coords"]
+anchor_left = 0.625
+anchor_top = 0.307407
+anchor_right = 0.658333
+anchor_bottom = 0.366667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="7,2" type="Button" parent="Coords"]
+anchor_left = 0.6625
+anchor_top = 0.307407
+anchor_right = 0.695833
+anchor_bottom = 0.366667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="8,2" type="Button" parent="Coords"]
+anchor_left = 0.7
+anchor_top = 0.307407
+anchor_right = 0.733333
+anchor_bottom = 0.366667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="9,2" type="Button" parent="Coords"]
+anchor_left = 0.7375
+anchor_top = 0.307407
+anchor_right = 0.770833
+anchor_bottom = 0.366667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="0,3" type="Button" parent="Coords"]
+anchor_left = 0.4
+anchor_top = 0.374074
+anchor_right = 0.433333
+anchor_bottom = 0.433333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1,3" type="Button" parent="Coords"]
+anchor_left = 0.4375
+anchor_top = 0.374074
+anchor_right = 0.470833
+anchor_bottom = 0.433333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2,3" type="Button" parent="Coords"]
+anchor_left = 0.475
+anchor_top = 0.374074
+anchor_right = 0.508333
+anchor_bottom = 0.433333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3,3" type="Button" parent="Coords"]
+anchor_left = 0.5125
+anchor_top = 0.374074
+anchor_right = 0.545833
+anchor_bottom = 0.433333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4,3" type="Button" parent="Coords"]
+anchor_left = 0.55
+anchor_top = 0.374074
+anchor_right = 0.583333
+anchor_bottom = 0.433333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5,3" type="Button" parent="Coords"]
+anchor_left = 0.5875
+anchor_top = 0.374074
+anchor_right = 0.620833
+anchor_bottom = 0.433333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="6,3" type="Button" parent="Coords"]
+anchor_left = 0.625
+anchor_top = 0.374074
+anchor_right = 0.658333
+anchor_bottom = 0.433333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="7,3" type="Button" parent="Coords"]
+anchor_left = 0.6625
+anchor_top = 0.374074
+anchor_right = 0.695833
+anchor_bottom = 0.433333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="8,3" type="Button" parent="Coords"]
+anchor_left = 0.7
+anchor_top = 0.374074
+anchor_right = 0.733333
+anchor_bottom = 0.433333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="9,3" type="Button" parent="Coords"]
+anchor_left = 0.7375
+anchor_top = 0.374074
+anchor_right = 0.770833
+anchor_bottom = 0.433333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="0,4" type="Button" parent="Coords"]
+anchor_left = 0.4
+anchor_top = 0.440741
+anchor_right = 0.433333
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1,4" type="Button" parent="Coords"]
+anchor_left = 0.4375
+anchor_top = 0.440741
+anchor_right = 0.470833
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2,4" type="Button" parent="Coords"]
+anchor_left = 0.475
+anchor_top = 0.440741
+anchor_right = 0.508333
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3,4" type="Button" parent="Coords"]
+anchor_left = 0.5125
+anchor_top = 0.440741
+anchor_right = 0.545833
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4,4" type="Button" parent="Coords"]
+anchor_left = 0.55
+anchor_top = 0.440741
+anchor_right = 0.583333
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5,4" type="Button" parent="Coords"]
+anchor_left = 0.5875
+anchor_top = 0.440741
+anchor_right = 0.620833
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="6,4" type="Button" parent="Coords"]
+anchor_left = 0.625
+anchor_top = 0.440741
+anchor_right = 0.658333
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="7,4" type="Button" parent="Coords"]
+anchor_left = 0.6625
+anchor_top = 0.440741
+anchor_right = 0.695833
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="8,4" type="Button" parent="Coords"]
+anchor_left = 0.7
+anchor_top = 0.440741
+anchor_right = 0.733333
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="9,4" type="Button" parent="Coords"]
+anchor_left = 0.7375
+anchor_top = 0.440741
+anchor_right = 0.770833
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="0,5" type="Button" parent="Coords"]
+anchor_left = 0.4
+anchor_top = 0.507407
+anchor_right = 0.433333
+anchor_bottom = 0.566667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1,5" type="Button" parent="Coords"]
+anchor_left = 0.4375
+anchor_top = 0.507407
+anchor_right = 0.470833
+anchor_bottom = 0.566667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2,5" type="Button" parent="Coords"]
+anchor_left = 0.475
+anchor_top = 0.507407
+anchor_right = 0.508333
+anchor_bottom = 0.566667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3,5" type="Button" parent="Coords"]
+anchor_left = 0.5125
+anchor_top = 0.507407
+anchor_right = 0.545833
+anchor_bottom = 0.566667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4,5" type="Button" parent="Coords"]
+anchor_left = 0.55
+anchor_top = 0.507407
+anchor_right = 0.583333
+anchor_bottom = 0.566667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5,5" type="Button" parent="Coords"]
+anchor_left = 0.5875
+anchor_top = 0.507407
+anchor_right = 0.620833
+anchor_bottom = 0.566667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="6,5" type="Button" parent="Coords"]
+anchor_left = 0.625
+anchor_top = 0.507407
+anchor_right = 0.658333
+anchor_bottom = 0.566667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="7,5" type="Button" parent="Coords"]
+anchor_left = 0.6625
+anchor_top = 0.507407
+anchor_right = 0.695833
+anchor_bottom = 0.566667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="8,5" type="Button" parent="Coords"]
+anchor_left = 0.7
+anchor_top = 0.507407
+anchor_right = 0.733333
+anchor_bottom = 0.566667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="9,5" type="Button" parent="Coords"]
+anchor_left = 0.7375
+anchor_top = 0.507407
+anchor_right = 0.770833
+anchor_bottom = 0.566667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="0,6" type="Button" parent="Coords"]
+anchor_left = 0.4
+anchor_top = 0.574074
+anchor_right = 0.433333
+anchor_bottom = 0.633333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1,6" type="Button" parent="Coords"]
+anchor_left = 0.4375
+anchor_top = 0.574074
+anchor_right = 0.470833
+anchor_bottom = 0.633333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2,6" type="Button" parent="Coords"]
+anchor_left = 0.475
+anchor_top = 0.574074
+anchor_right = 0.508333
+anchor_bottom = 0.633333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3,6" type="Button" parent="Coords"]
+anchor_left = 0.5125
+anchor_top = 0.574074
+anchor_right = 0.545833
+anchor_bottom = 0.633333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4,6" type="Button" parent="Coords"]
+anchor_left = 0.55
+anchor_top = 0.574074
+anchor_right = 0.583333
+anchor_bottom = 0.633333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5,6" type="Button" parent="Coords"]
+anchor_left = 0.5875
+anchor_top = 0.574074
+anchor_right = 0.620833
+anchor_bottom = 0.633333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="6,6" type="Button" parent="Coords"]
+anchor_left = 0.625
+anchor_top = 0.574074
+anchor_right = 0.658333
+anchor_bottom = 0.633333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="7,6" type="Button" parent="Coords"]
+anchor_left = 0.6625
+anchor_top = 0.574074
+anchor_right = 0.695833
+anchor_bottom = 0.633333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="8,6" type="Button" parent="Coords"]
+anchor_left = 0.7
+anchor_top = 0.574074
+anchor_right = 0.733333
+anchor_bottom = 0.633333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="9,6" type="Button" parent="Coords"]
+anchor_left = 0.7375
+anchor_top = 0.574074
+anchor_right = 0.770833
+anchor_bottom = 0.633333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="0,7" type="Button" parent="Coords"]
+anchor_left = 0.4
+anchor_top = 0.640741
+anchor_right = 0.433333
+anchor_bottom = 0.7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1,7" type="Button" parent="Coords"]
+anchor_left = 0.4375
+anchor_top = 0.640741
+anchor_right = 0.470833
+anchor_bottom = 0.7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2,7" type="Button" parent="Coords"]
+anchor_left = 0.475
+anchor_top = 0.640741
+anchor_right = 0.508333
+anchor_bottom = 0.7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3,7" type="Button" parent="Coords"]
+anchor_left = 0.5125
+anchor_top = 0.640741
+anchor_right = 0.545833
+anchor_bottom = 0.7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4,7" type="Button" parent="Coords"]
+anchor_left = 0.55
+anchor_top = 0.640741
+anchor_right = 0.583333
+anchor_bottom = 0.7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5,7" type="Button" parent="Coords"]
+anchor_left = 0.5875
+anchor_top = 0.640741
+anchor_right = 0.620833
+anchor_bottom = 0.7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="6,7" type="Button" parent="Coords"]
+anchor_left = 0.625
+anchor_top = 0.640741
+anchor_right = 0.658333
+anchor_bottom = 0.7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="7,7" type="Button" parent="Coords"]
+anchor_left = 0.6625
+anchor_top = 0.640741
+anchor_right = 0.695833
+anchor_bottom = 0.7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="8,7" type="Button" parent="Coords"]
+anchor_left = 0.7
+anchor_top = 0.640741
+anchor_right = 0.733333
+anchor_bottom = 0.7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="9,7" type="Button" parent="Coords"]
+anchor_left = 0.7375
+anchor_top = 0.640741
+anchor_right = 0.770833
+anchor_bottom = 0.7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="0,8" type="Button" parent="Coords"]
+anchor_left = 0.4
+anchor_top = 0.707407
+anchor_right = 0.433333
+anchor_bottom = 0.766667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1,8" type="Button" parent="Coords"]
+anchor_left = 0.4375
+anchor_top = 0.707407
+anchor_right = 0.470833
+anchor_bottom = 0.766667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2,8" type="Button" parent="Coords"]
+anchor_left = 0.475
+anchor_top = 0.707407
+anchor_right = 0.508333
+anchor_bottom = 0.766667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3,8" type="Button" parent="Coords"]
+anchor_left = 0.5125
+anchor_top = 0.707407
+anchor_right = 0.545833
+anchor_bottom = 0.766667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4,8" type="Button" parent="Coords"]
+anchor_left = 0.55
+anchor_top = 0.707407
+anchor_right = 0.583333
+anchor_bottom = 0.766667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5,8" type="Button" parent="Coords"]
+anchor_left = 0.5875
+anchor_top = 0.707407
+anchor_right = 0.620833
+anchor_bottom = 0.766667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="6,8" type="Button" parent="Coords"]
+anchor_left = 0.625
+anchor_top = 0.707407
+anchor_right = 0.658333
+anchor_bottom = 0.766667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="7,8" type="Button" parent="Coords"]
+anchor_left = 0.6625
+anchor_top = 0.707407
+anchor_right = 0.695833
+anchor_bottom = 0.766667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="8,8" type="Button" parent="Coords"]
+anchor_left = 0.7
+anchor_top = 0.707407
+anchor_right = 0.733333
+anchor_bottom = 0.766667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="9,8" type="Button" parent="Coords"]
+anchor_left = 0.7375
+anchor_top = 0.707407
+anchor_right = 0.770833
+anchor_bottom = 0.766667
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="0,9" type="Button" parent="Coords"]
+anchor_left = 0.4
+anchor_top = 0.774074
+anchor_right = 0.433333
+anchor_bottom = 0.833333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1,9" type="Button" parent="Coords"]
+anchor_left = 0.4375
+anchor_top = 0.774074
+anchor_right = 0.470833
+anchor_bottom = 0.833333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2,9" type="Button" parent="Coords"]
+anchor_left = 0.475
+anchor_top = 0.774074
+anchor_right = 0.508333
+anchor_bottom = 0.833333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3,9" type="Button" parent="Coords"]
+anchor_left = 0.5125
+anchor_top = 0.774074
+anchor_right = 0.545833
+anchor_bottom = 0.833333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4,9" type="Button" parent="Coords"]
+anchor_left = 0.55
+anchor_top = 0.774074
+anchor_right = 0.583333
+anchor_bottom = 0.833333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5,9" type="Button" parent="Coords"]
+anchor_left = 0.5875
+anchor_top = 0.774074
+anchor_right = 0.620833
+anchor_bottom = 0.833333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="6,9" type="Button" parent="Coords"]
+anchor_left = 0.625
+anchor_top = 0.774074
+anchor_right = 0.658333
+anchor_bottom = 0.833333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="7,9" type="Button" parent="Coords"]
+anchor_left = 0.6625
+anchor_top = 0.774074
+anchor_right = 0.695833
+anchor_bottom = 0.833333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="8,9" type="Button" parent="Coords"]
+anchor_left = 0.7
+anchor_top = 0.774074
+anchor_right = 0.733333
+anchor_bottom = 0.833333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="9,9" type="Button" parent="Coords"]
+anchor_left = 0.7375
+anchor_top = 0.774074
+anchor_right = 0.770833
+anchor_bottom = 0.833333
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Confirm" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="Polygon2D" parent="Confirm"]
+color = Color( 0, 0, 0, 0.752941 )
+polygon = PoolVector2Array( 0, 0, 1920, 0, 1920, 1080, 0, 1080 )
+
+[node name="Checks" type="Control" parent="Confirm"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Confirm/Checks"]
+position = Vector2( 960, 536 )
+scale = Vector2( 85.3333, 85.3333 )
+frames = SubResource( 1 )
+frame = 3
+playing = true
+
+[node name="Select" type="Control" parent="Confirm"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Confirm/Select"]
+anchor_left = 0.189583
+anchor_top = 0.355556
+anchor_right = 0.810417
+anchor_bottom = 0.414815
+margin_right = -0.0012207
+margin_bottom = 0.000274658
+custom_fonts/font = ExtResource( 1 )
+text = "Do you confirm the selection of the box you clicked? Do you like it? Beautiful isn't it?"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmBtn" type="Button" parent="Confirm/Select"]
+anchor_left = 0.3
+anchor_top = 0.592593
+anchor_right = 0.433333
+anchor_bottom = 0.651852
+margin_right = 0.000610352
+margin_bottom = 0.000244141
+custom_fonts/font = ExtResource( 1 )
+text = "Yes! OMG YES!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CancelBtn" type="Button" parent="Confirm/Select"]
+anchor_left = 0.566667
+anchor_top = 0.593
+anchor_right = 0.7
+anchor_bottom = 0.657407
+margin_top = -0.440063
+margin_right = -0.00012207
+margin_bottom = -5.99976
+custom_fonts/font = ExtResource( 1 )
+text = "No..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ErrorMsg" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="Polygon2D" parent="ErrorMsg"]
+position = Vector2( 0, -3.05176e-05 )
+color = Color( 0, 0, 0, 0.752941 )
+polygon = PoolVector2Array( 0, 0, 1920, 0, 1920, 1080, 0, 1080 )
+
+[node name="Label" type="Label" parent="ErrorMsg"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -228.0
+margin_top = -91.0
+margin_right = 230.0
+margin_bottom = -28.0
+custom_fonts/font = ExtResource( 1 )
+text = "Allocation failed please try again"
+align = 1
+valign = 1
+
+[node name="OkButton" type="Button" parent="ErrorMsg"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 36.0
+margin_right = 64.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 1 )
+text = "Ok"
+__meta__ = {
+"_edit_use_anchors_": false
+}

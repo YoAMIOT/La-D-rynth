@@ -1,0 +1,324 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://scenes/3D/entities/DummyCharacter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ressources/font/TiwipiFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/UI/CharacterCustomization.cs" type="Script" id=3]
+[ext_resource path="res://ressources/animations/loading/loading5.png" type="Texture" id=4]
+[ext_resource path="res://ressources/animations/loading/loading1.png" type="Texture" id=5]
+[ext_resource path="res://ressources/animations/loading/loading6.png" type="Texture" id=6]
+[ext_resource path="res://ressources/animations/loading/loading7.png" type="Texture" id=7]
+[ext_resource path="res://ressources/animations/loading/loading8.png" type="Texture" id=8]
+[ext_resource path="res://ressources/animations/loading/loading3.png" type="Texture" id=9]
+[ext_resource path="res://ressources/animations/loading/loading2.png" type="Texture" id=10]
+[ext_resource path="res://ressources/animations/loading/loading4.png" type="Texture" id=11]
+
+[sub_resource type="PlaneMesh" id=4]
+size = Vector2( 80, 80 )
+
+[sub_resource type="ConcavePolygonShape" id=5]
+data = PoolVector3Array( 40, 0, 40, -40, 0, 40, 40, 0, -40, -40, 0, 40, -40, 0, -40, 40, 0, -40 )
+
+[sub_resource type="ProceduralSky" id=3]
+sky_top_color = Color( 0.854902, 0.721569, 0.623529, 1 )
+sky_curve = 0.0682072
+sun_latitude = 151.36
+sun_curve = 0.0120742
+
+[sub_resource type="Environment" id=6]
+background_mode = 2
+background_sky = SubResource( 3 )
+background_color = Color( 0.909804, 0.741176, 0.741176, 1 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[node name="CharacterCustomization" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="Ground" type="MeshInstance" parent="."]
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Ground"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.999955, 1.32248e-07, 0.00947731, -0.00545502, 0.817748, 0.57555, -0.00774998, -0.575576, 0.817712, 0, 0, 0 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 6 )
+
+[node name="Char" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.898794, 0, 0.438371, 0, 1, 0, -0.438371, 0, 0.898794, 0, 0, 0 )
+
+[node name="Skeleton" parent="Char/Armature" index="0"]
+bones/1/bound_children = [ NodePath("HeadAttachment") ]
+
+[node name="HeadAttachment" parent="Char/Armature/Skeleton" index="1"]
+transform = Transform( 1, 4.44089e-14, 2.38419e-07, 1.0877e-08, 0.998958, -0.0456214, -2.3817e-07, 0.0456214, 0.998958, 2.34605e-14, 2.52329, -0.0811625 )
+
+[node name="Hair" type="Spatial" parent="Char/Armature/Skeleton/HeadAttachment/Position3D" index="0"]
+
+[node name="Eyes" type="Spatial" parent="Char/Armature/Skeleton/HeadAttachment/Position3D" index="1"]
+
+[node name="Noses" type="Spatial" parent="Char/Armature/Skeleton/HeadAttachment/Position3D" index="2"]
+
+[node name="AnimationPlayer" parent="Char" index="2"]
+autoplay = "idle_loop"
+reset_on_save = true
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.9796, -0.0433172, 0.196234, 0, 0.976492, 0.215553, -0.200958, -0.211156, 0.956572, 3.843, 3.942, 4.145 )
+current = true
+
+[node name="UI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="Polygon2D" parent="UI"]
+position = Vector2( 120, 0 )
+scale = Vector2( 0.9375, 1 )
+color = Color( 0, 0, 0, 0.423529 )
+polygon = PoolVector2Array( 896, 0, 1920, 0, 1920, 1080, 896, 1080 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_right = -64.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HairLabel" type="Label" parent="UI/VBoxContainer"]
+margin_top = 327.0
+margin_right = 832.0
+margin_bottom = 363.0
+custom_fonts/font = ExtResource( 2 )
+text = "Hair style:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HairOption" type="OptionButton" parent="UI/VBoxContainer"]
+margin_top = 367.0
+margin_right = 832.0
+margin_bottom = 409.0
+custom_fonts/font = ExtResource( 2 )
+align = 1
+
+[node name="HairColorLabel" type="Label" parent="UI/VBoxContainer"]
+margin_top = 413.0
+margin_right = 832.0
+margin_bottom = 449.0
+custom_fonts/font = ExtResource( 2 )
+text = "Hair color:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HairColor" type="ColorPickerButton" parent="UI/VBoxContainer"]
+margin_top = 453.0
+margin_right = 832.0
+margin_bottom = 495.0
+custom_fonts/font = ExtResource( 2 )
+color = Color( 0.392157, 0.227451, 0.227451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EyesLabel" type="Label" parent="UI/VBoxContainer"]
+margin_top = 499.0
+margin_right = 832.0
+margin_bottom = 535.0
+custom_fonts/font = ExtResource( 2 )
+text = "Eyes type:"
+align = 1
+valign = 1
+
+[node name="EyesOption" type="OptionButton" parent="UI/VBoxContainer"]
+margin_top = 539.0
+margin_right = 832.0
+margin_bottom = 581.0
+custom_fonts/font = ExtResource( 2 )
+align = 1
+
+[node name="NosesLabel" type="Label" parent="UI/VBoxContainer"]
+margin_top = 585.0
+margin_right = 832.0
+margin_bottom = 621.0
+custom_fonts/font = ExtResource( 2 )
+text = "Nose type:"
+align = 1
+valign = 1
+
+[node name="NosesOption" type="OptionButton" parent="UI/VBoxContainer"]
+margin_top = 625.0
+margin_right = 832.0
+margin_bottom = 667.0
+custom_fonts/font = ExtResource( 2 )
+align = 1
+
+[node name="SkinLabel" type="Label" parent="UI/VBoxContainer"]
+margin_top = 671.0
+margin_right = 832.0
+margin_bottom = 707.0
+custom_fonts/font = ExtResource( 2 )
+text = "Skin color:"
+align = 1
+valign = 1
+
+[node name="SkinColor" type="ColorPickerButton" parent="UI/VBoxContainer"]
+margin_top = 711.0
+margin_right = 832.0
+margin_bottom = 753.0
+custom_fonts/font = ExtResource( 2 )
+color = Color( 0.85098, 0.72549, 0.713726, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterRotationSlider" type="HSlider" parent="UI"]
+anchor_left = 0.1
+anchor_top = 0.948
+anchor_right = 0.4
+anchor_bottom = 0.978
+margin_top = 0.159912
+margin_right = -288.0
+margin_bottom = -16.24
+rect_scale = Vector2( 2, 2 )
+max_value = 360.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DoneBtn" type="Button" parent="UI"]
+anchor_left = 0.667
+anchor_top = 0.77
+anchor_right = 0.833
+anchor_bottom = 0.889
+margin_left = -0.640137
+margin_top = 0.399963
+margin_right = 0.639893
+margin_bottom = -0.120056
+custom_fonts/font = ExtResource( 2 )
+text = "Done!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Confirm" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="Polygon2D" parent="Confirm"]
+position = Vector2( -1680, 0 )
+scale = Vector2( 1.875, 1 )
+color = Color( 0, 0, 0, 0.423529 )
+polygon = PoolVector2Array( 896, 0, 1920, 0, 1920, 1080, 896, 1080 )
+
+[node name="ConfirmMenu" type="Control" parent="Confirm"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Confirm/ConfirmMenu"]
+anchor_left = 0.191
+anchor_top = 0.355556
+anchor_right = 0.809
+anchor_bottom = 0.415
+margin_left = -0.720032
+margin_top = -0.000488281
+margin_right = 0.719971
+margin_bottom = -0.200012
+custom_fonts/font = ExtResource( 2 )
+text = "Do you really want to play the game with THAT body to reincarnate in?"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmBtn" type="Button" parent="Confirm/ConfirmMenu"]
+anchor_left = 0.3
+anchor_top = 0.592593
+anchor_right = 0.433333
+anchor_bottom = 0.651852
+margin_right = 0.000610352
+margin_bottom = 0.000244141
+custom_fonts/font = ExtResource( 2 )
+text = "I guess?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CancelBtn" type="Button" parent="Confirm/ConfirmMenu"]
+anchor_left = 0.566667
+anchor_top = 0.593
+anchor_right = 0.7
+anchor_bottom = 0.657407
+margin_top = -0.440063
+margin_right = -0.00012207
+margin_bottom = -5.99976
+custom_fonts/font = ExtResource( 2 )
+text = "NOP!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Checks" type="Control" parent="Confirm"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Confirm/Checks"]
+position = Vector2( 960, 536 )
+scale = Vector2( 85.3333, 85.3333 )
+frames = SubResource( 7 )
+frame = 7
+playing = true
+
+[node name="Label" type="Label" parent="Confirm/Checks"]
+anchor_left = 0.192
+anchor_top = 0.296
+anchor_right = 0.809
+anchor_bottom = 0.356
+margin_left = -0.640015
+margin_top = 0.320007
+margin_right = 2.71997
+margin_bottom = -0.480011
+custom_fonts/font = ExtResource( 2 )
+text = "Ok... As you wish... I'm sending your \"thing\" to the master!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[editable path="Char"]
