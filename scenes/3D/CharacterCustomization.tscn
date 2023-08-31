@@ -301,6 +301,7 @@ __meta__ = {
 position = Vector2( 960, 536 )
 scale = Vector2( 85.3333, 85.3333 )
 frames = SubResource( 7 )
+frame = 3
 playing = true
 
 [node name="Label" type="Label" parent="Confirm/Checks"]

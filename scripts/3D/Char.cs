@@ -22,8 +22,10 @@ public class Char : KinematicBody{
     private bool canCast = true;
     private bool echolocation = false;
     private int manaRubyCount = 0;
+    private DataManager DataManager;
 
     public override void _Ready(){
+        DataManager = GetNode<DataManager>("/root/DataManager");
         initializePhysicalAttributes();
         GetNode<Timer>("SpellCooldown").Connect("timeout", this, "castCooldown");
         Input.SetMouseMode(Input.MouseMode.Captured);
@@ -138,23 +140,23 @@ public class Char : KinematicBody{
 
 //INITIALIZE PHYSICAL APPEARANCE
     private void initializePhysicalAttributes(){
-        // characterAttribute = Server.characterAttribute;
-        // string hair = (string)characterAttribute["hairStyle"];
-        // string eyes = (string)characterAttribute["eyesType"];
-        // string nose = (string)characterAttribute["noseType"];
-        // PackedScene hairScene = GD.Load<PackedScene>("res://ressources/meshes/attributes/hair/" + hair.ToLower() + ".glb");
-        // PackedScene eyesScene = GD.Load<PackedScene>("res://ressources/meshes/attributes/eyes/" + eyes.ToLower() + ".glb");
-        // PackedScene noseScene = GD.Load<PackedScene>("res://ressources/meshes/attributes/noses/" + nose.ToLower() + ".glb");
-        // Spatial hairInstance = (Spatial)hairScene.Instance();
-        // Spatial eyesInstance = (Spatial)eyesScene.Instance();
-        // Spatial noseInstance = (Spatial)noseScene.Instance();
-        // hairInstance.GetChild<MeshInstance>(0).MaterialOverride = GD.Load<Material>("res://ressources/meshes/attributes/hair/hair.material");
-        // noseInstance.GetChild<MeshInstance>(0).MaterialOverride = GD.Load<Material>("res://ressources/meshes/skin.material");
-        // hairInstance.GetChild<MeshInstance>(0).MaterialOverride.Set("albedo_color", new Color((string)characterAttribute["hairColor"]));
-        // noseInstance.GetChild<MeshInstance>(0).MaterialOverride.Set("albedo_color", new Color((string)characterAttribute["skinColor"]));
-        // GetNode<Position3D>("Armature/Skeleton/HeadAttachment/Position3D").AddChild(hairInstance);
-        // GetNode<Position3D>("Armature/Skeleton/HeadAttachment/Position3D").AddChild(eyesInstance);
-        // GetNode<Position3D>("Armature/Skeleton/HeadAttachment/Position3D").AddChild(noseInstance);
+        characterAttribute = DataManager.playerDatas["characterAttributes"] as Godot.Collections.Dictionary;
+        string hair = (string)characterAttribute["hairStyle"];
+        string eyes = (string)characterAttribute["eyesType"];
+        string nose = (string)characterAttribute["noseType"];
+        PackedScene hairScene = GD.Load<PackedScene>("res://ressources/meshes/attributes/hair/" + hair.ToLower() + ".glb");
+        PackedScene eyesScene = GD.Load<PackedScene>("res://ressources/meshes/attributes/eyes/" + eyes.ToLower() + ".glb");
+        PackedScene noseScene = GD.Load<PackedScene>("res://ressources/meshes/attributes/noses/" + nose.ToLower() + ".glb");
+        Spatial hairInstance = (Spatial)hairScene.Instance();
+        Spatial eyesInstance = (Spatial)eyesScene.Instance();
+        Spatial noseInstance = (Spatial)noseScene.Instance();
+        hairInstance.GetChild<MeshInstance>(0).MaterialOverride = GD.Load<Material>("res://ressources/meshes/attributes/hair/hair.material");
+        noseInstance.GetChild<MeshInstance>(0).MaterialOverride = GD.Load<Material>("res://ressources/meshes/skin.material");
+        hairInstance.GetChild<MeshInstance>(0).MaterialOverride.Set("albedo_color", new Color((string)characterAttribute["hairColor"]));
+        noseInstance.GetChild<MeshInstance>(0).MaterialOverride.Set("albedo_color", new Color((string)characterAttribute["skinColor"]));
+        GetNode<Position3D>("Armature/Skeleton/HeadAttachment/Position3D").AddChild(hairInstance);
+        GetNode<Position3D>("Armature/Skeleton/HeadAttachment/Position3D").AddChild(eyesInstance);
+        GetNode<Position3D>("Armature/Skeleton/HeadAttachment/Position3D").AddChild(noseInstance);
     }
 
 
